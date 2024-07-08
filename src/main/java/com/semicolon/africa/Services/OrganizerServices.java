@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface OrganizerServices {
     OrganizerResponse register(OrganizerRequest organizerRequest);
-    EventResponse addTicketTo(TicketRequest addTicketRequest);
+    EventResponse addTicketTo(AddTicketRequest addTicketRequest);
     DiscountResponse addDiscountForTicket(AddDiscountRequest addDiscountRequest);
     List<GuestResponse> viewAllEventAttendees(ViewAllEventAttendeeRequest viewAllEventAttendeeRequest);
 }

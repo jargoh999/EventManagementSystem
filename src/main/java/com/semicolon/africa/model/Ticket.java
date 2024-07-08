@@ -1,11 +1,10 @@
 package com.semicolon.africa.model;
-
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
-
+import java.util.UUID;
 @Setter
 @Getter
 @NoArgsConstructor
@@ -15,9 +14,10 @@ import java.math.BigDecimal;
 public class Ticket {
 @Id
 @GeneratedValue(strategy = GenerationType.AUTO )
-private Long id;
+private UUID id;
   @ManyToOne
   @Nullable
+  @JoinTable(name = "event_tickets")
   private Event event;
   @Enumerated(value = EnumType.STRING)
   private TicketType ticketType;
@@ -25,6 +25,4 @@ private Long id;
   @OneToOne
   @Nullable
   private Discount discount;
-  @Enumerated(value = EnumType.STRING)
-  private TicketStatus ticketStatus;
 }

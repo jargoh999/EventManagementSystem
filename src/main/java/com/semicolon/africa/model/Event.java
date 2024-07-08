@@ -21,6 +21,6 @@ public class Event {
     private String eventTitle;
     private LocalDate eventDate;
     private LocalTime eventTime;
-    @OneToOne
+    @ManyToOne
     private Address eventVenue;
 }

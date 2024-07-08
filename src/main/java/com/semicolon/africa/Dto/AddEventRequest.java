@@ -1,7 +1,6 @@
 package com.semicolon.africa.Dto;
 
-import com.africa.semicolon.model.Address;
-import com.africa.semicolon.model.Organizer;
+
 import lombok.*;
 
 import java.time.LocalDate;

@@ -1,7 +1,7 @@
 package com.semicolon.africa.Dto;
 
-import com.africa.semicolon.model.TicketType;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.semicolon.africa.model.TicketType;
 import lombok.*;
 
 @Setter
@@ -12,5 +12,4 @@ import lombok.*;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ViewAllEventAttendeeRequest {
     private Long eventId;
-    private TicketType ticketType;
 }

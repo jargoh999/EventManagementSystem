@@ -22,7 +22,8 @@ public class Discount {
     @Id
     @GeneratedValue
     private Long id;
-    private String percentageDiscount;
+    private TicketType ticketType;
+    private Integer percentageDiscount;
     private LocalDate expirationDate;
     private LocalTime expirationTime;
 }

@@ -1,6 +1,7 @@
 package com.semicolon.africa.Repositories;
 
-import com.africa.semicolon.model.Discount;
+
+import com.semicolon.africa.model.Discount;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface Discounts extends JpaRepository<Discount,Long> {

@@ -1,8 +1,8 @@
 package com.semicolon.africa.Dto;
 
-import com.africa.semicolon.model.Discount;
-import com.africa.semicolon.model.TicketStatus;
-import com.africa.semicolon.model.TicketType;
+import com.semicolon.africa.model.Discount;
+import com.semicolon.africa.model.TicketStatus;
+import com.semicolon.africa.model.TicketType;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -14,8 +14,8 @@ import java.math.BigDecimal;
 @Builder
 public class TicketRequest {
     private Long eventId;
-    private TicketType table;
+    private TicketType ticketType;
     private BigDecimal price;
-    private Discount discount;
+    private Long discountId;
     private TicketStatus ticketStatus;
 }

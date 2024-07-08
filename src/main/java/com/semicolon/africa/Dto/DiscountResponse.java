@@ -12,7 +12,7 @@ import java.time.LocalTime;
 @Builder
 public class DiscountResponse {
     private Long id;
-    private String percentageDiscount;
+    private int percentageDiscount;
     private LocalDate expirationDate;
     private LocalTime expirationTime;
 }
