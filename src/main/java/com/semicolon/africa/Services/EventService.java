@@ -8,7 +8,7 @@ import com.semicolon.africa.model.Event;
 import java.util.List;
 
 public interface EventService {
-    TicketResponse reserveTicket(ReserveTicketRequest reserveTicketRequest);
+    ReserveTicketResponse reserveTicket(ReserveTicketRequest reserveTicketRequest);
 
     PurchaseTicketResponse purchaseTicket(PurchaseTicketRequest purchaseTicketRequest);
 

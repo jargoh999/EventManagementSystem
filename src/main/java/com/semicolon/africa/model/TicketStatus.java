@@ -4,7 +4,4 @@ public enum TicketStatus {
     RESERVED,
     PURCHASED,
     EXPIRED,
-
-
-
 };

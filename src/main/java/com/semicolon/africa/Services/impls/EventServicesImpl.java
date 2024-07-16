@@ -20,13 +20,16 @@ public class EventServicesImpl implements EventService {
     private final Addresses addresses;
     private final Events events;
     private final ModelMapper modelMapper;
+    private final TicketServicesImpl ticketServices;
 
 
     @Override
-    public PurchaseTicketResponse purchaseTicket(PurchaseTicketRequest purchaseTicketRequest) {return null;}
+    public PurchaseTicketResponse purchaseTicket(PurchaseTicketRequest purchaseTicketRequest) {
+                  return ticketServices.purchaseTicket(purchaseTicketRequest.getTicketId());
+    }
     @Override
-    public TicketResponse reserveTicket(ReserveTicketRequest reserveTicketRequest) {
-        return null;
+    public ReserveTicketResponse reserveTicket(ReserveTicketRequest reserveTicketRequest) {
+        return ticketServices.reserveTicket(reserveTicketRequest.getTicketId());
     }
     @Override
     public List<EventResponse> viewAllEventsFor(Long organizerId) {

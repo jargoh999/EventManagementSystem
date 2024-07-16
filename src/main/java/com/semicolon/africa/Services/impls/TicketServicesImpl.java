@@ -30,14 +30,16 @@ public class TicketServicesImpl implements TicketService {
     }
 
     @Override
+    @SuppressWarnings({"all"})
     public ReserveTicketResponse reserveTicket(UUID ticketId) {
         var ticket =tickets.findTicketById(ticketId).orElseThrow(
         ()-> new RuntimeException("Could not find ticket"));
         if(!now().plusWeeks(1).isBefore(ticket.getEvent().getEventDate().atTime(ticket.getEvent().getEventTime()))) throw new IllegalArgumentException("you no go fit reserve ticket boss time don go");
-        return ReserveTicketResponse.builder().ticketId(tickets.save(ticket).getId()).message("successfully purchased").build();
+        return ReserveTicketResponse.builder().ticketId(tickets.save(ticket).getId()).message("successfully reserved").build();
     }
 
     @Override
+    @SuppressWarnings({"all"})
     public PurchaseTicketResponse purchaseTicket(UUID ticketId) {
            var ticket =tickets.findTicketById(ticketId).orElseThrow(()-> new RuntimeException("Could not find"));
            if(!now().plusDays(4L).isBefore(ticket.getEvent().getEventDate().atTime(ticket.getEvent().getEventTime()))) throw new IllegalArgumentException("you no go fit purchase ticket boss time don go");

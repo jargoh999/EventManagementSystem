@@ -8,6 +8,7 @@ import com.semicolon.africa.Repositories.Tickets;
 import com.semicolon.africa.Services.GuestService;
 import com.semicolon.africa.model.Guest;
 import com.semicolon.africa.model.Ticket;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -31,12 +32,14 @@ public class GuestServicesImpl implements GuestService {
            .phoneNumber(guestTicketRequest.getPhoneNumber()).build();
            guests.save(guest);return ticket.get();
     }
+
     @Override
-    public Ticket reserveTicket(GuestTicketRequest guestTicketReserveRequest) {
+    public Ticket reserveTicket( GuestTicketRequest guestTicketReserveRequest) {
         var ticket = tickets.findTicketByEventAndTicketType(guestTicketReserveRequest.getEventId(), guestTicketReserveRequest.getTicketType());
         ticketServices.reserveTicket(ticket.get().getId());
         ticket = tickets.findTicketById(ticket.get().getId());
         Guest guest = Guest.builder().email(guestTicketReserveRequest.getEmail()).ticket(ticket.get()).phoneNumber(guestTicketReserveRequest.getPhoneNumber()).build();
         guests.save(guest);return ticket.get();
     }
+
 }

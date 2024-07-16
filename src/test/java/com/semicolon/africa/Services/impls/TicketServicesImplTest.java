@@ -34,13 +34,11 @@ public class TicketServicesImplTest {
     @Sql(scripts = {"/db/data.Event.sql"})
     @Sql(scripts = {"/db/data.ticket.sql"})
     public void testToReserveTicket() {
-        assertThrows(IllegalArgumentException.class, ()->ticketServices.reserveTicket(UUID.fromString("4cae3788-e52b-49c1-ba5e-b61bb7deda82")));
-
+     var response = ticketServices.reserveTicket(UUID.fromString("4cae3788-e52b-49c1-ba5e-b61bb7deda82"));
+     assertThat(response.getMessage()).contains("reserved");
     }
 
     @Test
-
-
     @Sql(scripts = {"/db/data.organizer.sql"})
     @Sql(scripts = {"/db/data.address.sql"})
     @Sql(scripts = {"/db/data.Event.sql"})
@@ -48,6 +46,7 @@ public class TicketServicesImplTest {
     public void testToPurchaseTicket() {
         var response =ticketServices.purchaseTicket(UUID.fromString("4cae3788-e52b-49c1-ba5e-b61bb7deda82"));
         assertThat(response).isNotNull();
+        assertThat(response.getMessage()).contains("purchased");
     }
 
     @Test

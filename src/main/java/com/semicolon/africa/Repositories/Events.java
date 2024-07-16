@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface Events extends JpaRepository<Event,Long> {
-   @Query("SELECT event from Event event where event.organizer.id=:organizerId")
+   @Query("SELECT event FROM Event event WHERE event.organizer.id=:organizerId")
    List<Event> getEventByOrganizerId(Long organizerId);
 }

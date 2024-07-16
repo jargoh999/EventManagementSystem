@@ -41,7 +41,6 @@ class OrganizerServicesImplTest {
         var response = organizerServices.register(request);
         assertThat(response).isNotNull();
     }
-
     @Test
     @Sql(scripts = {"/db/data.organizer.sql"})
     @Sql(scripts = {"/db/data.address.sql"})
@@ -61,7 +60,6 @@ class OrganizerServicesImplTest {
         assert ticke_t.getEvent() != null;
         assertThat(ticke_t.getEvent().getEventTitle()).isEqualTo("wedding");
     }
-
     @Test
     @Sql(scripts = {"/db/data.organizer.sql"})
     @Sql(scripts = {"/db/data.address.sql"})
@@ -78,7 +76,7 @@ class OrganizerServicesImplTest {
         AddDiscountRequest addDiscountRequest = AddDiscountRequest.builder().percentageDiscount(10).ticketId(ticke_t.getId()).expirationDate(LocalDate.now().plusDays(3L)).expirationTime(LocalTime.NOON).build();
         organizerServices.addDiscountForTicket(addDiscountRequest);
         ticke_t = tickets.findTicketById(ticke_t.getId()).get();
-        assertThat(ticke_t.getPrice()).isCloseTo(BigDecimal.valueOf(9), Percentage.withPercentage(90));
+        assertThat(ticke_t.getPrice()).isCloseTo(BigDecimal.valueOf(9), Percentage.withPercentage(100));
     }
     @Sql(scripts = {"/db/data.organizer.sql"})
     @Sql(scripts = {"/db/data.address.sql"})

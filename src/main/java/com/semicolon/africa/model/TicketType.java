@@ -6,5 +6,4 @@ public enum TicketType {
     BUSINESS,
     V_VIP,
     REGULAR
-
 };

@@ -10,8 +10,8 @@ import java.util.UUID;
 
 public interface Tickets extends JpaRepository<Ticket, UUID> {
     Optional<Ticket> findTicketById(UUID uuid);
-    @Query("SELECT t FROM Ticket t WHERE t.ticketType=:ticketType AND t.event.id=:eventId")
+    @Query("SELECT ticket FROM Ticket ticket WHERE ticket.ticketType=:ticketType AND ticket.event.id=:eventId")
     Optional<Ticket> findTicketByEventAndTicketType(Long eventId, TicketType ticketType);
-    @Query("select ticket from Ticket ticket where ticket.event.id=:eventId")
+    @Query("SELECT ticket FROM Ticket ticket WHERE ticket.event.id=:eventId")
     List<Ticket> findTicketByEventId(Long eventId);
 }

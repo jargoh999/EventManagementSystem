@@ -45,7 +45,7 @@ class EventServicesImplTest {
         AddEventRequest addEventRequest = AddEventRequest.builder()
         .eventDate(LocalDate.parse("2024-07-03"))
         .eventTime(LocalTime.parse("11:30")).eventTitle("title")
-                .organizerId(1L)
+                .organizerId(100L)
         .addressId(1L).build();
         var  event =eventServices.addAnEvent(addEventRequest);
         assertThat(event).isNotNull();

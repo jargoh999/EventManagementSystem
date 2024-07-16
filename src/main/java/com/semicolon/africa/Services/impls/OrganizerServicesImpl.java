@@ -52,8 +52,8 @@ public class OrganizerServicesImpl implements OrganizerServices {
 
     @Override
     public DiscountResponse addDiscountForTicket(AddDiscountRequest addDiscountRequest) {
-           var ticket =tickets.findTicketById(addDiscountRequest.getTicketId()).orElseThrow(() -> new RuntimeException("ticket not found"));
-           if(!isValidPercentage(addDiscountRequest.getPercentageDiscount())) throw new RuntimeException("Invalid percentage-discount");
+        var ticket =tickets.findTicketById(addDiscountRequest.getTicketId()).orElseThrow(() -> new RuntimeException("ticket not found"));
+        if(!isValidPercentage(addDiscountRequest.getPercentageDiscount())) throw new RuntimeException("Invalid percentage-discount");
         BigDecimal percentageDiscount =calculateDiscountOnTicketPrice(ticket.getPrice(),addDiscountRequest.getPercentageDiscount());
         Discount discount = Discount.builder().expirationDate(addDiscountRequest.getExpirationDate()).ticketType(addDiscountRequest.getTicketType()).expirationTime(addDiscountRequest.getExpirationTime()).percentageDiscount(addDiscountRequest.getPercentageDiscount()).build();
         var savedDiscount=discounts.save(discount);ticket.setDiscount(discount);
