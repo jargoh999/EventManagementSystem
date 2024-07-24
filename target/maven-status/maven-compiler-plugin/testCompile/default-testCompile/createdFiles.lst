@@ -1,0 +1,8 @@
+com\semicolon\africa\Repositories\EventsTest.class
+com\semicolon\africa\Services\impls\GuestServicesImplTest.class
+com\semicolon\africa\Services\impls\OrganizerServicesImplTest.class
+com\semicolon\africa\Services\impls\TicketServicesImplTest.class
+com\semicolon\africa\Repositories\TicketsTest.class
+com\semicolon\africa\Repositories\GuestsTest.class
+com\semicolon\africa\Services\impls\EventServicesImplTest.class
+com\africa\semicolon\SemicolonApplicationTests.class
