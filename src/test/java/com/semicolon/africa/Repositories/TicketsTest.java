@@ -56,7 +56,7 @@ class TicketsTest {
         String url = "https://api.paystack.co/transaction/initialize";
         String secretKey = "sk_test_4b64e1d47b4d632565d13d4f1237488775e4c430"; // Replace with your actual secret key
         // Create the JSON payload
-        String payload = "{ \"email\": \"customer@email.com\", \"amount\": \"200000000\" }";
+        String payload = "{ \"email\": \"christabelVenice2312@email.com\", \"amount\": \"20000000\" }";
         URL apiUrl = new URL(url);
         return getHttpURLConnection(apiUrl, secretKey, payload);
     }
